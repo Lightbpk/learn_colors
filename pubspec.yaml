@@ -29,6 +29,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flame: ^0.29.3
+  soundpool: ^1.1.3
+  audioplayers: ^0.18.3
 
 dev_dependencies:
   flutter_test:
@@ -44,7 +46,20 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/audio/rainbow.m4a
+    - assets/audio/blue.m4a
+    - assets/audio/green.m4a
+    - assets/audio/red.m4a
+    - assets/audio/brown.m4a
+    - assets/audio/white.m4a
+    - assets/audio/orange.m4a
+    - assets/audio/grey.m4a
+    - assets/audio/black.m4a
+    - assets/audio/pink.m4a
+    - assets/audio/lightblue.m4a
+    - assets/audio/purple.m4a
+    - assets/audio/yellow.m4a
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

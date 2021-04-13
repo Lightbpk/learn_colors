@@ -13,13 +13,16 @@ class LearnColorsGame extends Game{
   Rect bgRect;
   final int yellow = 0xffffEB3B;
   final int green = 0xff4caf50;
-  final int blue = 0xff2196f3;
+  final int blue = 0xff01579b;
+  final int lightBlue = 0xff29b6f6;
   final int red = 0xffd32f2f;
   final int orange = 0xffff9800;
   final int purple = 0xff9c27b0;
   final int grey = 0xff9e9e9e;
   final int pink = 0xffe91e63;
   final int black = 0xff000000;
+  final int brown = 0xff4e342e;
+  final int white = 0xffffffff;
 
   LearnColorsGame(){
     init();
@@ -31,25 +34,26 @@ class LearnColorsGame extends Game{
     double fst = tileSize / 4;
     double sec = tileSize + (tileSize /2);
     double thr = (tileSize * 2 ) + (tileSize * .75);
-    colorTiles.add(new ColorTile(new Offset(fst, fst), yellow, tileSize));
-    colorTiles.add(new ColorTile(new Offset(sec, fst), green, tileSize));
-    colorTiles.add(new ColorTile(new Offset(thr, fst), blue, tileSize));
-    colorTiles.add(new ColorTile(new Offset(fst, sec), red, tileSize));
-    colorTiles.add(new ColorTile(new Offset(sec, sec), orange, tileSize));
-    colorTiles.add(new ColorTile(new Offset(thr, sec), purple, tileSize));
-    colorTiles.add(new ColorTile(new Offset(fst, thr), grey, tileSize));
-    colorTiles.add(new ColorTile(new Offset(sec, thr), pink, tileSize));
-    colorTiles.add(new ColorTile(new Offset(thr, thr), black, tileSize));
+    double fore = (tileSize * 4);
+    colorTiles.add(new ColorTile(new Offset(fst, fst), yellow, tileSize,'audio/yellow.m4a'));
+    colorTiles.add(new ColorTile(new Offset(sec, fst), green, tileSize,'audio/green.m4a'));
+    colorTiles.add(new ColorTile(new Offset(thr, fst), blue, tileSize,'audio/blue.m4a'));
+    colorTiles.add(new ColorTile(new Offset(fst, sec), red, tileSize,'audio/red.m4a'));
+    colorTiles.add(new ColorTile(new Offset(sec, sec), orange, tileSize,'audio/orange.m4a'));
+    colorTiles.add(new ColorTile(new Offset(thr, sec), purple, tileSize,'audio/purple.m4a'));
+    colorTiles.add(new ColorTile(new Offset(fst, thr), grey, tileSize,'audio/grey.m4a'));
+    colorTiles.add(new ColorTile(new Offset(sec, thr), pink, tileSize,'audio/pink.m4a'));
+    colorTiles.add(new ColorTile(new Offset(thr, thr), black, tileSize,'audio/black.m4a'));
+    colorTiles.add(new ColorTile(new Offset(fst, fore), brown, tileSize,'audio/brown.m4a'));
+    colorTiles.add(new ColorTile(new Offset(sec, fore), lightBlue, tileSize,'audio/lightblue.m4a'));
+    colorTiles.add(new ColorTile(new Offset(thr, fore), white, tileSize,'audio/white.m4a'));
   }
 
   @override
   void render(Canvas canvas) {
     Paint bgPaint = Paint();
-    bgPaint.color = Colors.white;
-    Paint testPaint = Paint();
-    testPaint.color = Color(0xff00ff00);
+    bgPaint.color = Color(0xb3ffffff);
     canvas.drawRect(bgRect, bgPaint);
-    //canvas.drawRect(testRect, testPaint);
     colorTiles.forEach((ColorTile tile) {
       tile.render(canvas);
     });
